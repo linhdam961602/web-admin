@@ -1,23 +1,24 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 // import CRUDDemoPage from './pages/CRUDDemoPage';
-import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+// import TableDemo from './pages/TableDemoPage';
+import Dashboard from './pages/Dashboard';
 import PrivateRoute from 'containers/Auth/PrivateRoute';
 import {
-  HOME_URI,
+  DASHBOARD_URI,
   SIGN_IN_URI,
   // CRUD_URI,
   NOT_FOUND,
 } from 'constants/routes';
-const Home = () => <>Home page</>;
+
 function App() {
   return (
     <Routes>
-      <Route path={HOME_URI} element={<HomePage />} />
+      <Route path={DASHBOARD_URI} element={<Dashboard />} />
       <Route path={SIGN_IN_URI} element={<LoginPage />} />
-      <Route path={HOME_URI} element={<PrivateRoute />}>
-        <Route path={HOME_URI} element={<Home />} />
+      <Route path={DASHBOARD_URI} element={<PrivateRoute />}>
+        <Route path={DASHBOARD_URI} element={<Dashboard />} />
       </Route>
       <Route path={NOT_FOUND} element={<Navigate replace to={SIGN_IN_URI} />} />
     </Routes>
