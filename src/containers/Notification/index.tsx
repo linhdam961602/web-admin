@@ -1,13 +1,18 @@
+import 'material-react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react';
 import { shallowEqual } from 'react-redux';
+import { ToastContainer } from 'material-react-toastify';
 import { useIntl, IntlShape } from 'react-intl';
+import { makeStyles } from '@mui/styles';
+import { Theme } from '@mui/material/styles';
+
 import transform from 'lodash/transform';
 import isString from 'lodash/isString';
 import isPlainObject from 'lodash/isPlainObject';
 
+import showNotification from 'components/MUIComponent/Notification';
 import { useAppDispatch, useAppSelector, useInjectReducer } from 'store/hooks';
 import KeyPair from 'types/KeyPair';
-import showNotification from 'components/BasicComponents/Notification';
 
 import { sliceName, selectors, reducer, reducerActions } from './slices';
 
@@ -48,14 +53,32 @@ const formatMessage = (message: any, intl: IntlShape) => {
   return pFormatMessage;
 };
 
+const useStyles = makeStyles((theme: Theme) => ({
+  container: {
+    '& .Toastify__toast-container--top-right': {
+      [theme.breakpoints.down('sm')]: {
+        width: theme.typography.pxToRem(250),
+        marginLeft: theme.typography.pxToRem(100),
+        top: theme.typography.pxToRem(15),
+      },
+      [theme.breakpoints.up('md')]: {
+        width: theme.typography.pxToRem(300),
+      },
+    },
+  },
+}));
+
 export function NotificationContainer() {
   const intl = useIntl();
+  const classes = useStyles();
+
   useInjectReducer({
     key: sliceName,
     reducer,
   });
 
   const dispatch = useAppDispatch();
+
   const currentNotification = useAppSelector(
     selectors.notificationSelected,
     shallowEqual,
@@ -76,5 +99,9 @@ export function NotificationContainer() {
     }
   });
 
-  return null;
+  return (
+    <div className={classes.container}>
+      <ToastContainer />
+    </div>
+  );
 }
