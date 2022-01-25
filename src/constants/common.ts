@@ -31,3 +31,20 @@ export const INPUT_TYPES = {
   TEXT: 'text',
   PASSWORD: 'password',
 };
+
+export const LANGS = [
+  {
+    value: 'ko',
+    label: '한국어',
+    icon: '/static/icons/ic_flags_kr.svg',
+  },
+  {
+    value: 'en',
+    label: 'English',
+    icon: '/static/icons/ic_flag_en.svg',
+  },
+];
+
+export const DRAWER_WIDTH = 280;
+export const APPBAR_MOBILE = 64;
+export const APPBAR_DESKTOP = 92;

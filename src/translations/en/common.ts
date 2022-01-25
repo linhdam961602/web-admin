@@ -17,6 +17,13 @@ const common = {
   },
 };
 
+const topbar = {
+  account: {
+    profile: 'Profile',
+    menuItem: 'Menu Item',
+  },
+};
+
 const notification = {
   messageTitle: {
     success: 'Success',
@@ -26,4 +33,4 @@ const notification = {
   },
 };
 
-export { common, notification };
+export { common, topbar, notification };
