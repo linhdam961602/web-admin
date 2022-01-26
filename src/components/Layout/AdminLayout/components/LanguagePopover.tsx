@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 
 // components
-import MenuPopover from 'components/BasicComponents/MenuPopover';
+import MenuPopover from 'components/MUIComponent/MenuPopover';
 import useLocales from 'hooks/useLocales';
 
 // ----------------------------------------------------------------------

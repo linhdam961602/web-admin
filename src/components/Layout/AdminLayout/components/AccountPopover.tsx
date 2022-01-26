@@ -19,8 +19,8 @@ import {
 // service
 import useLocales from 'hooks/useLocales';
 // components
-import MenuPopover from 'components/BasicComponents/MenuPopover';
-import SvgIcon from 'components/BasicComponents/SvgIcon';
+import MenuPopover from 'components/MUIComponent/MenuPopover';
+import SvgIcon from 'components/MUIComponent/SvgIcon';
 
 // ----------------------------------------------------------------------
 
