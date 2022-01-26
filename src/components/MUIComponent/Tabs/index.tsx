@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React, { forwardRef } from 'react';
 
 // material
@@ -10,8 +9,8 @@ import Box from 'components/MUIComponent/Box';
 interface TabInfo {
   value?: string;
   label?: string;
-  icon?: JSX.Element;
-  component: JSX.Element;
+  icon?: React.ReactElement;
+  component: React.ReactElement;
   disabled?: boolean;
 }
 
@@ -19,7 +18,7 @@ interface MTabsProps {
   currentTab?: any;
   tabsInfo: TabInfo[];
   onChange?: (value: any) => void;
-  renderTabPane?: (tab: TabInfo) => JSX.Element;
+  renderTabPane?: (tab: TabInfo) => React.ReactElement;
 }
 
 const Tabs = forwardRef<HTMLDivElement, MTabsProps>(
