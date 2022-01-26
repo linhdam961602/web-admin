@@ -7,20 +7,17 @@ import { Icon } from '@iconify/react';
 import personFill from '@iconify/icons-eva/person-fill';
 // material
 import { alpha } from '@mui/material/styles';
-import {
-  Avatar,
-  Button,
-  Box,
-  Divider,
-  MenuItem,
-  Typography,
-  IconButton,
-} from '@mui/material';
+import { Box, MenuItem } from '@mui/material';
 // service
 import useLocales from 'hooks/useLocales';
 // components
 import MenuPopover from 'components/MUIComponent/MenuPopover';
+import Avatar from 'components/MUIComponent/Avatar';
 import SvgIcon from 'components/MUIComponent/SvgIcon';
+import Button from 'components/MUIComponent/Button';
+import Typography from 'components/MUIComponent/Typography';
+import IconButton from 'components/MUIComponent/IconButton';
+import Divider from 'components/MUIComponent/Divider';
 
 // ----------------------------------------------------------------------
 
