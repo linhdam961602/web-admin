@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 // material
 import { experimentalStyled as styled } from '@mui/material/styles';
-import DashboardNavbar from './DashboardNavbar';
+import DashboardNavbar from './components/DashboardNavbar';
 import { useIntl } from 'react-intl';
 // ----------------------------------------------------------------------
 

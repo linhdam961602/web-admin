@@ -2,11 +2,13 @@ import { Icon } from '@iconify/react';
 import menu2Fill from '@iconify/icons-eva/menu-2-fill';
 import { Theme } from '@mui/material/styles';
 import { Box, Stack, IconButton, useTheme } from '@mui/material';
-import { RootStyle, ToolbarStyle } from './styled';
+import { RootStyle, ToolbarStyle } from '../styled';
 
 // components
 import LanguagePopover from './LanguagePopover';
 import AccountPopover from './AccountPopover';
+import Notifications from './Notifications';
+import Typography from 'components/MUIComponent/Typography';
 
 // ----------------------------------------------------------------------
 
@@ -30,9 +32,18 @@ export default function DashboardNavbar({
         >
           <Icon icon={menu2Fill} />
         </IconButton>
-        <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            noWrap
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
+            Header
+          </Typography>
+        </Box>
         <Stack direction="row" spacing={{ xs: 0.5, sm: 1.5 }}>
           <LanguagePopover />
+          <Notifications />
           <AccountPopover />
         </Stack>
       </ToolbarStyle>

@@ -22,6 +22,11 @@ const topbar = {
     profile: 'Profile',
     menuItem: 'Menu Item',
   },
+  notifications: {
+    title: 'Notification',
+    seeUnread: 'Unread',
+    seeAll: 'All',
+  },
 };
 
 const notification = {
