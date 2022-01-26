@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react';
 import { experimentalStyled as styled } from '@mui/material/styles';
-import { Box, MenuItem, Typography } from '@mui/material';
 import bellFill from '@iconify/icons-eva/bell-fill';
 import { Icon } from '@iconify/react';
-
+import Box from 'components/MUIComponent/Box';
+import Typography from 'components/MUIComponent/Typography';
+import MenuItem from 'components/MUIComponent/MenuItem';
 import useLocales from 'hooks/useLocales';
 import MenuPopover from 'components/MUIComponent/MenuPopover';
 import IconButton from 'components/MUIComponent/IconButton';

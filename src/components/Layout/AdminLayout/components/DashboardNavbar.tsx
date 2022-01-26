@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react';
 import menu2Fill from '@iconify/icons-eva/menu-2-fill';
 import { Theme } from '@mui/material/styles';
-import { Box, Stack, IconButton, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import { RootStyle, ToolbarStyle } from '../styled';
 
 // components
@@ -9,6 +9,9 @@ import LanguagePopover from './LanguagePopover';
 import AccountPopover from './AccountPopover';
 import Notifications from './Notifications';
 import Typography from 'components/MUIComponent/Typography';
+import IconButton from 'components/MUIComponent/IconButton';
+import Stack from 'components/MUIComponent/Stack';
+import Box from 'components/MUIComponent/Box';
 
 // ----------------------------------------------------------------------
 

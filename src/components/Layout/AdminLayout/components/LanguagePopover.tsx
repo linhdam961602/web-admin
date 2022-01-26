@@ -1,16 +1,14 @@
 import { useRef, useState } from 'react';
 // material
-import {
-  Box,
-  MenuItem,
-  ListItemIcon,
-  ListItemText,
-  IconButton,
-} from '@mui/material';
+import MenuItem from 'components/MUIComponent/MenuItem';
+import IconButton from 'components/MUIComponent/IconButton';
+import ListItemIcon from 'components/MUIComponent/ListItemIcon';
+import ListItemText from 'components/MUIComponent/ListItemText';
 
 // components
 import MenuPopover from 'components/MUIComponent/MenuPopover';
 import useLocales from 'hooks/useLocales';
+import { Box } from '@mui/material';
 
 // ----------------------------------------------------------------------
 const TEST_ID = 'langHeader';
