@@ -1,9 +1,8 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import CRUDDemoPage from './pages/CRUDDemoPage';
-import HomePage from './pages/HomePage';
+import TableDemoPage from './pages/TableDemoPage';
 import LoginPage from './pages/LoginPage';
-// import PrivateRoute from 'containers/Auth/PrivateRoute';
 import DashboardLayout from 'components/Layout/AdminLayout';
 import { HOME_URI, SIGN_IN_URI, CRUD_URI, NOT_FOUND } from 'constants/routes';
 function App() {
@@ -13,7 +12,7 @@ function App() {
 
       {/* Dashboard routes */}
       <Route path={'/'} element={<DashboardLayout />}>
-        <Route path={HOME_URI} element={<HomePage />} />
+        <Route path={HOME_URI} element={<TableDemoPage />} />
       </Route>
 
       {/* Login */}
