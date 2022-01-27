@@ -35,6 +35,7 @@ export default function DashboardLayout() {
   const intl = useIntl();
   const t = (id: string) => intl.formatMessage({ id });
 
+  /* eslint-disable */
   const [open, setOpen] = useState(false);
   const [isExpandMenu, setIsExpandMenu] = useState(true);
 

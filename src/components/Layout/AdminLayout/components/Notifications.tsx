@@ -4,7 +4,6 @@ import bellFill from '@iconify/icons-eva/bell-fill';
 import { Icon } from '@iconify/react';
 import Box from 'components/MUIComponent/Box';
 import Typography from 'components/MUIComponent/Typography';
-import MenuItem from 'components/MUIComponent/MenuItem';
 import useLocales from 'hooks/useLocales';
 import MenuPopover from 'components/MUIComponent/MenuPopover';
 import IconButton from 'components/MUIComponent/IconButton';
@@ -46,7 +45,7 @@ const TEST_ID = 'notifications';
 
 export default function Notifications() {
   const notificationRef = useRef(null);
-  const { t, currentLang } = useLocales();
+  const { t } = useLocales();
   const [open, setOpen] = useState(false);
 
   return (
