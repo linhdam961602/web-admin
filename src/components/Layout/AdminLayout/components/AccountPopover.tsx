@@ -1,6 +1,4 @@
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import get from 'lodash/get';
+import { Link as RouterLink } from 'react-router-dom';
 import { useRef, useState } from 'react';
 // icon
 import { Icon } from '@iconify/react';
@@ -13,7 +11,6 @@ import useLocales from 'hooks/useLocales';
 // components
 import MenuPopover from 'components/MUIComponent/MenuPopover';
 import Avatar from 'components/MUIComponent/Avatar';
-import SvgIcon from 'components/MUIComponent/SvgIcon';
 import Button from 'components/MUIComponent/Button';
 import Typography from 'components/MUIComponent/Typography';
 import IconButton from 'components/MUIComponent/IconButton';
@@ -27,9 +24,6 @@ const TEST_ID = 'accountHeader';
 export default function AccountPopover() {
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
-  const [openSettings, setOpenSettings] = useState(false);
-  const dispatch: any = useDispatch();
-  const navigate: any = useNavigate();
   const { t } = useLocales();
 
   const MENU_OPTIONS = [
@@ -122,19 +116,6 @@ export default function AccountPopover() {
             {option.label}
           </MenuItem>
         ))}
-
-        <MenuItem
-          onClick={() => {
-            setOpen(false);
-            setOpenSettings(true);
-          }}
-        >
-          <SvgIcon
-            src="/static/icons/ic_analytics.svg"
-            sx={{ width: '24px', height: '24px', mr: 2 }}
-          />
-          {t('topbar.account.menuItem')}
-        </MenuItem>
 
         <Box sx={{ p: 2, pt: 1.5 }}>
           <Button

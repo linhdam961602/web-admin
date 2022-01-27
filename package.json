@@ -79,7 +79,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint --ignore-path .gitignore --fix --max-warnings=0",
+    "lint": "eslint --max-warnings=0 --ext .ts,.tsx ./src",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },

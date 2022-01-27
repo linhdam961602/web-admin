@@ -49,7 +49,7 @@ module.exports = {
   },
   rules: {
     eqeqeq: ['warn', 'always'],
-    '@typescript-eslint/no-unused-vars': ['off'],
+    '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     '@typescript-eslint/ban-types': [

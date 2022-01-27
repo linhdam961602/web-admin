@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import MDivider, { DividerProps } from '@mui/material/Divider';
 
 const Divider = ({ ...props }: DividerProps) => <MDivider {...props} />;
