@@ -39,7 +39,7 @@ const notification = {
 };
 
 const sideBar = {
-  general: 'General',
+  general: 'GENERAL',
   dashBoard: 'Dashboard',
   user: 'User',
   list: 'List',

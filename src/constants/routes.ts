@@ -1,6 +1,7 @@
-export const HOME_URI = '/dashboard';
+export const HOME_URI = '/';
 export const SIGN_IN_URI = '/login';
 export const CRUD_URI = '/crud';
+export const TABLE_DEMO_URI = '/table';
 export const USER = '/user';
 export const USER_LIST = `${USER}/list`;
 export const USER_REQUEST = `${USER}/request`;

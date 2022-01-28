@@ -1,11 +1,5 @@
-// import React from 'react';
-// import * as FaIcons from 'react-icons/fa';
-// import * as AiIcons from 'react-icons/ai';
-// import * as IoIcons from 'react-icons/io';
-import Base from 'illustration/IconBase.png';
-import { Icon } from '@iconify/react';
-import { SvgIcon } from '@mui/material';
 import { intl } from 'containers/LanguageProvider';
+
 import {
   HOME_URI,
   USER,
@@ -21,21 +15,17 @@ export const SidebarData = [
     title: intl.formatMessage({
       id: 'sideBar.dashBoard',
     }),
-    path: USER,
-    icon: (
-      <SvgIcon>
-        <Icon icon={Base} />
-      </SvgIcon>
-    ),
+    path: HOME_URI,
+    icon: '/static/icons/ic_analytics.svg',
   },
   {
     title: intl.formatMessage({
       id: 'sideBar.user',
     }),
-    path: HOME_URI,
-    // icon: <AiIcons.AiFillHome />,
-    // iconClosed: <RiIcons.RiArrowDownSFill />,
-    // iconOpened: <RiIcons.RiArrowUpSFill />,
+    path: USER,
+    icon: '/static/icons/ic_user.svg',
+    iconClosed: '/static/icons/ic_chevron_down.svg',
+    iconOpened: '/static/icons/ic_chevron_right.svg',
 
     subNav: [
       {
@@ -43,14 +33,12 @@ export const SidebarData = [
           id: 'sideBar.list',
         }),
         path: USER_LIST,
-        // icon: <IoIcons.IoIosPaper />
       },
       {
         title: intl.formatMessage({
           id: 'sideBar.request',
         }),
         path: USER_REQUEST,
-        // icon: <IoIcons.IoIosPaper />
       },
     ],
   },
@@ -60,20 +48,20 @@ export const SidebarData = [
       id: 'sideBar.projects',
     }),
     path: PROJECT,
-    // icon: <FaIcons.FaCartPlus />
+    icon: '/static/icons/ic_page.svg',
   },
   {
     title: intl.formatMessage({
       id: 'sideBar.developmentTools',
     }),
     path: DEVELOPMENT_TOOLS,
-    // icon: <IoIcons.IoMdPeople />
+    icon: '/static/icons/ic_kanban.svg',
   },
   {
     title: intl.formatMessage({
       id: 'sideBar.members',
     }),
     path: MEMBERS,
-    // icon: <FaIcons.FaEnvelopeOpenText />,
+    icon: '/static/icons/ic_user_group.svg',
   },
 ];
