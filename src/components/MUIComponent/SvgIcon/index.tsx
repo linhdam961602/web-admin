@@ -15,6 +15,7 @@ export default function SvgIconStyle({
     <Box
       component="span"
       sx={{
+        display: 'inline-block',
         width: 24,
         height: 24,
         mask: `url(${src}) no-repeat center / contain`,

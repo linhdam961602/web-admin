@@ -5,16 +5,17 @@ import { Outlet } from 'react-router-dom';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import DashboardNavbar from './components/DashboardNavbar';
 import { useIntl } from 'react-intl';
+import SideBar from 'components/Layout/SideBar';
 // ----------------------------------------------------------------------
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 92;
 
-const RootStyle = styled('div')`
-display: 'flex',
-minHeight: '100%',
-overflow: 'hidden'
-`;
+const RootStyle = styled('div')(() => ({
+  display: 'flex',
+  minHeight: '100%',
+  overflow: 'hidden',
+}));
 
 const MainStyle = styled('div')(({ theme }) => ({
   flexGrow: 1,
@@ -41,14 +42,16 @@ export default function DashboardLayout() {
 
   return (
     <RootStyle title={t('dashboard.title')}>
-      <DashboardNavbar
-        onOpenSidebar={() => setOpen(true)}
-        isExpandMenu={isExpandMenu}
-      />
-      {/* Sidebar */}
-      <MainStyle>
-        <Outlet />
-      </MainStyle>
+      <SideBar />
+      <>
+        <DashboardNavbar
+          onOpenSidebar={() => setOpen(true)}
+          isExpandMenu={isExpandMenu}
+        />
+        <MainStyle>
+          <Outlet />
+        </MainStyle>
+      </>
     </RootStyle>
   );
 }

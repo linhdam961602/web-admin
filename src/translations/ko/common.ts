@@ -26,4 +26,15 @@ const notification = {
   },
 };
 
-export { common, notification };
+const sideBar = {
+  general: 'General',
+  dashBoard: 'Dashboard',
+  user: 'User',
+  list: 'List',
+  request: 'Request',
+  projects: 'Projects',
+  developmentTools: 'Development tools',
+  members: 'Members',
+};
+
+export { common, notification, sideBar };
