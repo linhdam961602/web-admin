@@ -1,12 +1,20 @@
 import React from 'react';
-import { DialogTitle, Stack } from '@mui/material';
+import { Breakpoint, Stack } from '@mui/material';
+import { intl } from 'containers/LanguageProvider';
 import Typography from 'components/MUIComponent/Typography';
 import Dialog from '@mui/material/Dialog';
 import Button from 'components/MUIComponent/Button';
-import { ButtonActionsStyle, DialogRootStyle } from './styled';
+import {
+  ButtonActionsStyle,
+  DialogRootStyle,
+  DialogTitleStyle,
+} from './styled';
+import { ColorSchema } from 'types/Palette';
+import { SvgIconComponent } from '@mui/icons-material';
 
 type CommonDialogProps = {
   title?: string;
+  titleIcon?: React.ReactElement<SvgIconComponent> | null;
   children: React.ReactElement;
   isOpenDialog: boolean;
   onCloseDialog?: () => void;
@@ -15,31 +23,37 @@ type CommonDialogProps = {
   onDiscard?: (event: any) => void;
   cancelText?: string;
   confirmText?: string;
-  colorConfirmBtn?: string;
+  colorConfirmBtn?: ColorSchema;
+  maxWidth?: Breakpoint;
 };
 
 const AlertDialog = ({
   title,
+  titleIcon,
   isOpenDialog,
   onCloseDialog,
   children,
   onNo,
   onYes,
-  cancelText,
-  confirmText,
+  cancelText = intl.formatMessage({ id: 'common.button.cancel' }),
+  confirmText = intl.formatMessage({ id: 'common.button.ok' }),
   colorConfirmBtn = 'error',
+  maxWidth = 'xs',
 }: CommonDialogProps) => (
   <Dialog
     open={isOpenDialog}
     onClose={onCloseDialog}
-    maxWidth="xs"
+    maxWidth={maxWidth}
     onClick={(e: any) => {
       e.stopPropagation();
     }}
   >
-    <DialogTitle>
-      <Typography color="primary">{title}</Typography>
-    </DialogTitle>
+    {(title || titleIcon) && (
+      <DialogTitleStyle>
+        {titleIcon}
+        <Typography variant="h5">{title}</Typography>
+      </DialogTitleStyle>
+    )}
     <DialogRootStyle>
       {children}
       <ButtonActionsStyle>

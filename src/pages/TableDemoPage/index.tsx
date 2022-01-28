@@ -1,14 +1,17 @@
+/* eslint-disable react/no-children-prop */
 import React, { useState, useEffect, useCallback } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import orderBy from 'lodash/orderBy';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Dialog from 'components/MUIComponent/Dialog';
+import JobLogComponent from 'components/MUIComponent/JobLog';
 
 import Table from 'components/MUIComponent/Table';
 import { ASCENDANT, DESCENDANT } from 'components/MUIComponent/Table/constants';
 import { PageOptionsProps } from 'components/MUIComponent/Table/interfaces';
 import { mockData, headData } from './mockData';
+import { markdown } from './markdownData';
 
 const TableDemo = () => {
   const [sortProperty, setSortProperty] = useState<string>('');
@@ -19,6 +22,7 @@ const TableDemo = () => {
   });
   const [listDataSort, setListDataSort]: any = useState([]);
   const [open, setOpen] = React.useState(false);
+  const [openJobLog, setOpenJobLog] = React.useState(false);
 
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
@@ -87,6 +91,15 @@ const TableDemo = () => {
         totalCount={mockData.length}
         onChangePage={handleChangePage}
         onSort={handleSort}
+      />
+
+      {/* Demo Joblog modal */}
+      <Button onClick={() => setOpenJobLog(true)}>Open modal Joblog</Button>
+
+      <JobLogComponent
+        data={markdown}
+        isOpen={openJobLog}
+        setOpen={() => setOpenJobLog(!openJobLog)}
       />
     </>
   );
