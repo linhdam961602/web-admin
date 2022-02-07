@@ -23,12 +23,12 @@ function App() {
   return (
     <Routes>
       <Route path={CRUD_URI} element={<CRUDDemoPage />} />
-      <Route path={TABLE_DEMO_URI} element={<TableDemoPage />} />
       {/* Login */}
       <Route path={SIGN_IN_URI} element={<LoginPage />} />
       {/* Dashboard routes */}
       <Route path={HOME_URI} element={<PrivateRoute />}>
         <Route path={HOME_URI} element={<DashboardLayout />}>
+          <Route path={TABLE_DEMO_URI} element={<TableDemoPage />} />
           <Route path={PROJECT} element={<>PROJECT</>} />
           <Route path={USER} element={<>USER</>} />
           <Route path={USER_LIST} element={<>USER_LIST</>} />

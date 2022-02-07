@@ -47,6 +47,7 @@ const sideBar = {
   projects: 'Projects',
   developmentTools: 'Development tools',
   members: 'Members',
+  tableDemo: 'Table Demo',
 };
 
 export { common, notification, topbar, sideBar };

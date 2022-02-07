@@ -8,6 +8,7 @@ import {
   PROJECT,
   DEVELOPMENT_TOOLS,
   MEMBERS,
+  TABLE_DEMO_URI,
 } from 'constants/routes';
 
 export const SidebarData = [
@@ -42,7 +43,13 @@ export const SidebarData = [
       },
     ],
   },
-
+  {
+    title: intl.formatMessage({
+      id: 'sideBar.tableDemo',
+    }),
+    path: TABLE_DEMO_URI,
+    icon: '/static/icons/ic_base.svg',
+  },
   {
     title: intl.formatMessage({
       id: 'sideBar.projects',
