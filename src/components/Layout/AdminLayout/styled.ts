@@ -6,7 +6,9 @@ import {
 } from '@mui/material/styles';
 import { APPBAR_DESKTOP, APPBAR_MOBILE, DRAWER_WIDTH } from 'constants/common';
 
-export const RootStyle = styled(AppBar)(
+export const RootStyle = styled(AppBar, {
+  shouldForwardProp: (prop) => prop !== 'styleProps',
+})(
   ({
     theme,
     styleProps,

@@ -24,7 +24,9 @@ declare module '@mui/material/Button/Button' {
 type ButtonColor = 'info' | 'success' | 'warning' | 'error';
 type ButtonVariant = 'contained' | 'outlined' | 'text';
 
-const ButtonStyle = styled(MButton)(
+const ButtonStyle = styled(MButton, {
+  shouldForwardProp: (prop) => prop !== 'styleProps',
+})(
   ({
     theme,
     styleProps,

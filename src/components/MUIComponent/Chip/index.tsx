@@ -13,7 +13,9 @@ import { ColorSchema } from 'types/Palette';
 
 // ----------------------------------------------------------------------
 
-const ChipStyle = styled(MChip)(
+const ChipStyle = styled(MChip, {
+  shouldForwardProp: (prop) => prop !== 'styleProps',
+})(
   ({
     theme,
     styleProps,
