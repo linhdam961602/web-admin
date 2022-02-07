@@ -1,14 +1,8 @@
-import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import {
-  authSliceName,
-  authReducer,
-  initialState,
-} from 'containers/Auth/slices';
+import { authSliceName, authReducer } from 'containers/Auth/slices';
+import * as authHelper from './helpers';
 
 import { useInjectReducer } from 'store/hooks';
-import { useSelector } from 'react-redux';
-import get from 'lodash/get';
 import { SIGN_IN_URI } from 'constants/routes';
 
 const PrivateRoute = () => {
@@ -17,9 +11,7 @@ const PrivateRoute = () => {
     reducer: authReducer,
   });
 
-  const userInfo = useSelector((state) =>
-    get(state, [authSliceName, 'userInfo'], initialState),
-  );
+  const userInfo = authHelper.getAccessToken();
 
   // const auth = true;
   // console.log('userInfo', userInfo)

@@ -4,7 +4,6 @@ import { Outlet } from 'react-router-dom';
 // material
 import { experimentalStyled as styled } from '@mui/material/styles';
 import DashboardNavbar from './components/DashboardNavbar';
-import { useIntl } from 'react-intl';
 import SideBar from 'components/Layout/SideBar';
 // ----------------------------------------------------------------------
 
@@ -32,20 +31,15 @@ const MainStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function DashboardLayout() {
-  const intl = useIntl();
-  const t = (id: string) => intl.formatMessage({ id });
-
-  /* eslint-disable */
-  const [open, setOpen] = useState(false);
+export default function AdminLayout() {
   const [isExpandMenu, setIsExpandMenu] = useState(true);
 
   return (
-    <RootStyle title={t('dashboard.title')}>
+    <RootStyle>
       <SideBar />
       <>
         <DashboardNavbar
-          onOpenSidebar={() => setOpen(true)}
+          onOpenSidebar={() => setIsExpandMenu(true)}
           isExpandMenu={isExpandMenu}
         />
         <MainStyle>
