@@ -19,7 +19,9 @@ export const StyledSnackbarText = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const StyledSnackbarIcon = styled(Box)(
+export const StyledSnackbarIcon = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'styleProps',
+})(
   ({
     theme,
     styleProps,
