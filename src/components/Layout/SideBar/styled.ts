@@ -1,13 +1,8 @@
-import { makeStyles } from '@mui/styles';
-import {
-  alpha,
-  experimentalStyled as styled,
-  Theme,
-} from '@mui/material/styles';
+import { experimentalStyled as styled } from '@mui/material/styles';
 import logo from 'images/logo.png';
 import { Link } from 'react-router-dom';
 
-export const Logo = styled('div')(({ theme }) => ({
+export const Logo = styled('div')(() => ({
   display: 'flex',
   margin: '2rem 0 0 2rem',
 

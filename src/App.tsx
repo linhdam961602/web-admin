@@ -4,7 +4,6 @@ import CRUDDemoPage from './pages/CRUDDemoPage';
 import TableDemoPage from './pages/TableDemoPage';
 import LoginPage from './pages/LoginPage';
 import DashboardLayout from 'components/Layout/AdminLayout';
-import Dashboard from './pages/Dashboard';
 import PrivateRoute from 'containers/Auth/PrivateRoute';
 import {
   HOME_URI,
