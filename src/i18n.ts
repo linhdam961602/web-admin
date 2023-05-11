@@ -10,11 +10,11 @@
  */
 
 import enTranslationMessages from 'translations/en';
-import koTranslationMessages from 'translations/ko';
+import viTranslationMessages from 'translations/vi';
 import KeyPair from 'types/KeyPair';
 
 const DEFAULT_LOCALE = 'en';
-const appLocales = ['en', 'ko'];
+const appLocales = ['en', 'vi'];
 
 /**
  * this function use to flatten the object nested in language json file
@@ -39,7 +39,7 @@ const flattenMessages = (nestedMessages: KeyPair, prefix = '') =>
 
 const translationMessages = {
   en: flattenMessages(enTranslationMessages),
-  ko: flattenMessages(koTranslationMessages),
+  vi: flattenMessages(viTranslationMessages),
 };
 
 export { appLocales, translationMessages, DEFAULT_LOCALE };

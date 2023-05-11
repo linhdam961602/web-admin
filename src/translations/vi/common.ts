@@ -38,4 +38,18 @@ const sideBar = {
   tableDemo: 'Table Demo',
 };
 
-export { common, notification, sideBar };
+const topbar = {
+  logout: '로그아웃',
+  account: {
+    profile: '사용자 정보',
+    menuItem: 'Menu Item',
+  },
+  notifications: {
+    title: '나의 공지사항',
+    seeUnread: '읽지 않은 항목 보기',
+    seeAll: '전체 보기',
+    desc: '{quantity}개의 읽지 않은 공지사항이 있습니다.',
+  },
+};
+
+export { common, notification, sideBar, topbar };

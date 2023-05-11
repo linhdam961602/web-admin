@@ -3,8 +3,10 @@ import {
   ACCESS_TOKEN,
   REFRESH_TOKEN,
   REMEMBER_ME_STORAGE_KEY,
-  LOGIN_USERNAME_STORAGE_KEY,
+  LANGUAGE,
 } from 'constants/common';
+import { DEFAULT_LOCALE } from 'i18n';
+import querystring from 'query-string';
 
 // access token
 export const setAccessToken = (accessToken: string) => {
@@ -28,18 +30,36 @@ export const clearRefreshToken = () => {
   localStorage.removeItem(REFRESH_TOKEN);
 };
 
-export const setRememberFeature = (isRemember: string, userName: string) => {
-  localStorage.setItem(REMEMBER_ME_STORAGE_KEY, isRemember);
+export const setLanguage = (lang: string = DEFAULT_LOCALE) => {
+  localStorage.setItem(LANGUAGE, lang);
+};
+
+export const getLanguage = () =>
+  localStorage.getItem(LANGUAGE) ||
+  (navigator.language?.slice?.(0, 2) === 'en' ? 'en' : DEFAULT_LOCALE);
+
+export const setRememberFeature = (isRemember: boolean, username: string) => {
   if (isRemember) {
-    localStorage.setItem(LOGIN_USERNAME_STORAGE_KEY, userName);
+    localStorage.setItem(REMEMBER_ME_STORAGE_KEY, username);
   } else {
-    localStorage.removeItem(LOGIN_USERNAME_STORAGE_KEY);
+    localStorage.removeItem(REMEMBER_ME_STORAGE_KEY);
   }
 };
+
+export const getRememberedUser = () =>
+  localStorage.getItem(REMEMBER_ME_STORAGE_KEY);
 
 export const clearUserCredential = () => {
   // eslint-disable-next-line no-console
   console.trace('__________Trace log clear auth___________');
   clearAccessToken();
   clearRefreshToken();
+};
+
+export const getReDirectUrl = (): any => {
+  const redirectUrl = querystring.parse(window.location.search).redirect;
+  if (redirectUrl && redirectUrl !== '') {
+    return redirectUrl;
+  }
+  return '';
 };

@@ -34,7 +34,7 @@ export const INPUT_TYPES = {
 
 export const LANGS = [
   {
-    value: 'ko',
+    value: 'vi',
     label: '한국어',
     icon: '/static/icons/ic_flags_kr.svg',
   },
@@ -44,6 +44,8 @@ export const LANGS = [
     icon: '/static/icons/ic_flag_en.svg',
   },
 ];
+
+export const LANGUAGE = 'lang';
 
 export const DRAWER_WIDTH = 280;
 export const APPBAR_MOBILE = 64;

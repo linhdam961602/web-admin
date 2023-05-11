@@ -6,16 +6,17 @@
  * IntlProvider component and i18n messages
  */
 import React, { ReactNode, useEffect } from 'react';
-import { useAppSelector, useInjectReducer } from 'store/hooks';
+import { useAppSelector } from 'store/hooks';
 import { createIntl, createIntlCache, IntlProvider } from 'react-intl';
-import { reducer, sliceName, selectors } from './slices';
+import { selectors } from './slices';
 import { translationMessages, DEFAULT_LOCALE } from 'i18n';
 import dayjs from 'dayjs';
+import * as auth from 'containers/Auth/helpers';
 
 dayjs.locale(DEFAULT_LOCALE);
 export let intl = createIntl(
   {
-    locale: DEFAULT_LOCALE,
+    locale: auth.getLanguage(),
     messages: translationMessages[DEFAULT_LOCALE],
   },
   createIntlCache(),
@@ -30,7 +31,6 @@ export function LanguageProvider({
   messages,
   children,
 }: LanguageProviderProps) {
-  useInjectReducer({ key: sliceName, reducer });
   const locale = useAppSelector(selectors.languageSelected);
 
   useEffect(() => {
